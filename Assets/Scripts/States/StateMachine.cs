@@ -2,11 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PosibleStates
-{
-    Test,
-}
-
 public class StateMachine
 {
 
@@ -32,7 +27,7 @@ public class StateMachine
 
     public void Update()
     {
-        CurrentState?.Update();
+        CurrentState?.Tick();
     }
 
 }

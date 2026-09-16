@@ -5,8 +5,11 @@ public class Bounds : MonoBehaviour
     public static Bounds Instance { get; private set; }
 
     [SerializeField] private float height = 30f;
-    [SerializeField] private float width = 60f;
+    [SerializeField] public float width = 60f;
+    
     [SerializeField] private bool drawGizmos;
+    public float Height => height;
+    public float Width => width;
 
     
     private void Awake()
@@ -20,9 +23,9 @@ public class Bounds : MonoBehaviour
         Vector3 newPosition = position;
 
         if (position.x > width / 2) newPosition.x = -width / 2;
-        if (position.x > -width / 2) newPosition.x = width / 2;
+        else if (position.x < -width / 2) newPosition.x = width / 2;
         if (position.z > height / 2) newPosition.z = -height / 2;
-        if (position.z > -height / 2) newPosition.z = height / 2;        
+        else if (position.z < -height / 2) newPosition.z = height / 2;        
         return newPosition;
     }
     
