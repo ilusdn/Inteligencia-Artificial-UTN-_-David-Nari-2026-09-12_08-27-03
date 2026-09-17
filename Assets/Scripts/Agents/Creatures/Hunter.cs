@@ -14,9 +14,9 @@ public class Hunter : Agent
     private List<GameObject> _availableBait = new List<GameObject>();
     private int _activeBaitCount = 0;
     
-    [SerializeField] public float TimeBetweenAttacks = 10f;
+    [SerializeField] public float TimeBetweenAttacks = 8f;
     public float TBATimer;
-    private float BaitTimer = 10f;
+    private float BaitTimer = 5f;
 
     public bool _gathering;
     public Gacela _prey;
@@ -56,6 +56,7 @@ public class Hunter : Agent
         if (TBATimer > 0)
         {
             TBATimer -= Time.deltaTime;
+            ui.setTBATimer(TBATimer);
         }
     }
 
@@ -86,11 +87,21 @@ public class Hunter : Agent
     }
 
 
-    public void FoundPrey( Gacela prey)
+    public void FoundPrey( Gacela newPrey)
     {        
         if (!_gathering && TBATimer <= 0f)
         {
-            _prey = prey;
+            if (_prey != null)
+            {
+                if ((_prey.Position-transform.position).magnitude > 10f)
+                {
+                    _prey = newPrey;
+                }
+            }
+            else
+            {
+                _prey = newPrey;
+            }
             _fsm.ChangeState(PublicEnums.HunterStates.Attack);
         }
     }

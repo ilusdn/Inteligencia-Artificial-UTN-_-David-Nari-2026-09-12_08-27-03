@@ -17,7 +17,7 @@ public class RespawnState : State
     {
         _timer = _respawnTime;
         _agent.body.SetActive(false);
-        _agent.GetComponent<Collider>().enabled = false;
+        _agent.GetComponent<CapsuleCollider>().enabled = false;
     }
 
     public override void Tick()
@@ -41,7 +41,7 @@ public class RespawnState : State
             );
         _agent.body.SetActive(true);
         _agent.detector.gameObject.SetActive(true);
-        _agent.GetComponent<Collider>().enabled = true;
+        _agent.GetComponent<CapsuleCollider>().enabled = true;
         _agent._currentHealth = _agent._maxHealth;
         _agent.ui.SetHealth(_agent._currentHealth);
         _agent._isDead = false;

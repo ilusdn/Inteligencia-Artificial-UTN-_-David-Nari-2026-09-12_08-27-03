@@ -419,6 +419,7 @@ MonoBehaviour:
   treatCreatures: 02000000
   _currentSteering: 0
   ui: {fileID: 1429251608874915122}
+  body: {fileID: 0}
   preyCreatures: 00000000
   dataPatrol:
     wayPoints: []
@@ -428,6 +429,7 @@ MonoBehaviour:
   TBATimer: 0
   _gathering: 0
   _prey: {fileID: 0}
+  damage: 50
 --- !u!1001 &7200787636503864852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -464,10 +466,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.57
       objectReference: {fileID: 0}
+    - target: {fileID: 7482697430491235223, guid: d05c547035d8335418ee089d8673845f, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7494336251951283712, guid: d05c547035d8335418ee089d8673845f, type: 3}
       propertyPath: m_Name
       value: UnitCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8087320271263068966, guid: d05c547035d8335418ee089d8673845f, type: 3}
+      propertyPath: TBAtimerSlider
+      value: 
+      objectReference: {fileID: 2731623654124436684}
     - target: {fileID: 8458680877501345893, guid: d05c547035d8335418ee089d8673845f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -569,3 +579,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8458680877501345893, guid: d05c547035d8335418ee089d8673845f, type: 3}
   m_PrefabInstance: {fileID: 7200787636503864852}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2731623654124436684 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5045996451355843288, guid: d05c547035d8335418ee089d8673845f, type: 3}
+  m_PrefabInstance: {fileID: 7200787636503864852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider

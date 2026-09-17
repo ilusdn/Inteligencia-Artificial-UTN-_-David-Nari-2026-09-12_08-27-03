@@ -121,7 +121,7 @@ public class Agent : MonoBehaviour, ITargetable
         var predictionLapse = distance / (_maxSpeed + target.Velocity.magnitude);
 
         Vector3 futurePosition = target.Position + target.Velocity * predictionLapse;
-        
+
         return futurePosition;
     }
 

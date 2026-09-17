@@ -535,6 +535,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4463244480206593854, guid: d05c547035d8335418ee089d8673845f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873689133936229821, guid: d05c547035d8335418ee089d8673845f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873689133936229821, guid: d05c547035d8335418ee089d8673845f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590594568616152988, guid: d05c547035d8335418ee089d8673845f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590594568616152988, guid: d05c547035d8335418ee089d8673845f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590594568616152988, guid: d05c547035d8335418ee089d8673845f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7494336251951283712, guid: d05c547035d8335418ee089d8673845f, type: 3}
       propertyPath: m_Name
       value: UnitCanvas

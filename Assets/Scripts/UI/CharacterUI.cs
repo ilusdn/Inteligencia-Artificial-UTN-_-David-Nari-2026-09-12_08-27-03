@@ -7,9 +7,16 @@ public class CharacterUI : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image stateImage;
 
+    [SerializeField] private Slider TBAtimerSlider;
+
     public void SetHealth(float current)
     {
         healthSlider.value = current;
+    }
+
+    public void setTBATimer(float current)
+    {       
+        TBAtimerSlider.value = current;
     }
 
     public void SetIcon(UIManager.StateIcon icon)

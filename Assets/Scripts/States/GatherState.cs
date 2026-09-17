@@ -22,6 +22,11 @@ public class GatherState : State
 
     public override void Tick()
     {
+        if ((_agent.transform.position - _agent._prey.Position).magnitude > 12f)
+        {
+            _agent._fsm.ChangeState(PublicEnums.HunterStates.Patrol);
+        }
+
         if ((_agent.transform.position - _agent._prey.Position).magnitude > 2f)
         {
             _agent.BasicMovement();
@@ -42,6 +47,9 @@ public class GatherState : State
         }
     }
 
-
+    public override void Exit()
+    {
+        _agent._gathering = false;
+    }
 
 }

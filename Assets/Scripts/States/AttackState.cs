@@ -27,7 +27,7 @@ public class AttackState : State
         _agent.ui.SetIcon(UIManager.StateIcon.MeleeAttack);
         float distance = (_agent.transform.position - _agent._prey.Position).magnitude;
         
-        if (distance > MeleeAttackRadius)
+        if (distance >= MeleeAttackRadius)
         {
             _agent.ui.SetIcon(UIManager.StateIcon.RangeAttack);
             if (distance < RangeAttackRadius)
@@ -49,7 +49,7 @@ public class AttackState : State
         }
         else
         {
-            if (distance < MeleeAttackRange)
+            if (distance <= MeleeAttackRange)
             {
                 if (_agent.TBATimer <= 0)
                     MeleeAttack();
@@ -70,12 +70,14 @@ public class AttackState : State
     {        
         Debug.Log("Pum");
         _agent.TBATimer = _agent.TimeBetweenAttacks;
+        _agent.ui.setTBATimer(_agent.TBATimer);
         _agent._prey.TakeDamage(_agent.damage);
     }
     public void MeleeAttack()
     {
         Debug.Log("Slash");
         _agent.TBATimer = _agent.TimeBetweenAttacks;
+        _agent.ui.setTBATimer(_agent.TBATimer);
         _agent._prey.TakeDamage(_agent.damage*2);
     }
 
